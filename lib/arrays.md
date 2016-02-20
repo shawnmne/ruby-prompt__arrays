@@ -5,44 +5,67 @@ instructor_notes: Feel free to re-organize the headings (or add/remove headings)
 
 # What is an Array?
 
-Replace me with your response...
+Arrays are ordered, integer-indexed collections of any objects.
 
 # What are some examples of information that would be Arrays as opposed to some other data type?
 
-Replace me with your response...
+groups of information
+colors = Array["red", "blue", "yellow", "orange", "green", "purple", "grey", "black", "white"]
+testscores = Array[100,88,97,76,92]
 
 # What is one way, using Ruby, to retrieve the 6th element in an Array? How about the 8th element? What happens if you try to retrieve the value of the _9999th_ element (or some element that doesn't exist in the array)?
-
-Replace me with your response...
+puts "#{colors[5]}" to access the 6th element
+puts "#{colors[7]}" to access the 8th element
+returns nil for elements out of range
 
 # The previous question asks about finding, for example, the 6th element in an Array. Is it possible to find the **-6th** (Notice the negative symbol!) element in an Array? What does that even mean?
 
-Replace me with your response...
+A negative index is assumed relative to the end of the array --- that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array, and so on
+put "#{colors[-6]}" would output orange
 
 # How would you perform an operation on every element inside an Array?
 
-Replace me with your response...
+use .map to perform operations on all elements  
+to increase every testscore by 5
+testscores.map { |i| i + 5 }
 
 # How do you add elements to an Array?
 
-Replace me with your response...
+to add element use .push, .unshift, .insert
+colors.unshift("bronze")
+colors.push("silver")
+colors.insert(4, "gold")
 
 # Given the Array `["Laura", "Fiona", "Tori"]`, how would you replace `"Fiona"` with `"Florence"` so that you end up with `["Laura", "Florence", "Tori"]`?
 
-Replace me with your response...
+to replace Fiona use Index of 1 assign it the value of "florence"
+names = Array["Laura", "Fiona", "Tori"]
+names[1] = "Florence"
 
 # What do the methods `push`, `pop`, `shift`, and `unshift` do?
 
-Replace me with your response...
+'push' is used to add the specified element value to the end of an array.
+'pop' deletes the final element from an array and returns it
+'shift' returns the first element of an array, deletes that element, and shifts all the other elements down one location to fill the empty spot.
+'unshift' shifts all elements of an array up one and add the specified element value to the front of the array
 
 # How do you determine how many elements are in an Array?
 
-Replace me with your response...
+To determine how many elements in an array use either .size or .length
 
 # How would you reverse the order of elements in an Array?
 
-Replace me with your response...
+use .reverse!
+
+testscores.reverse!
+puts "#{testscores}"n   
+
+outputs {92, 76, 97, 88, 100]
 
 # How would you convert a String `"Sumeet Jain"` into an Array `["Sumeet", "Jain"]`? How about to `["S", "u", "m", "e", "e", "t", " ", "J", "a", "i", "n"]`? How would you convert the Array back into a String?
 
-Replace me with your response...
+name = "Sumeet Jain".split(/ /) would create an array called name with elements ["Sumeet", "Jain"]
+
+use .join method on the array to create a string
+apart = Array["S", "u", "m", "e", "e", "t", " ", "J", "a", "i", "n"]
+together = apart.join
