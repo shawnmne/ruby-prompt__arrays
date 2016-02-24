@@ -31,16 +31,20 @@ testscores.map { |i| i + 5 }
 
 # How do you add elements to an Array?
 
-to add element use .push, .unshift, .insert
+to add element use .push, .unshift, .insert. <<
 colors.unshift("bronze")
 colors.push("silver")
 colors.insert(4, "gold")
+colors << "platinum"
 
 # Given the Array `["Laura", "Fiona", "Tori"]`, how would you replace `"Fiona"` with `"Florence"` so that you end up with `["Laura", "Florence", "Tori"]`?
 
-to replace Fiona use Index of 1 assign it the value of "florence"
+to replace Fiona use Index of 1 assign it the value of "florence" or if in an unknow array use .index to determine to it's index.  If the item is not in the array you would get a nil and hopefully the code around it would be setup 
+for error catching.
+
 names = Array["Laura", "Fiona", "Tori"]
 names[1] = "Florence"
+names[names.index("Fiona")] = "Florence"
 
 # What do the methods `push`, `pop`, `shift`, and `unshift` do?
 
